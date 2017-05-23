@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">TMDBMovies</string>
+
+
+    <!--https://api.themoviedb.org/3/movie/now_playing?api_key=d66d39af93971546a6280262deef40d6-->
+
+    <!--https://android-arsenal.com/details/1/18-->
+
+    <!--https://android-arsenal.com/details/1/774-->
+
+    <!--http://flavienlaurent.com/blog/2013/11/20/making-your-action-bar-not-boring/-->
+
+
+    <!--https://android-arsenal.com/details/3/709-->
+
+    <!--https://android-arsenal.com/details/1/2844-->
+
+    <!--https://android-arsenal.com/details/1/3394-->
+
+
+    <!--https://android-arsenal.com/details/1/3394-->
+</resources>
