@@ -22,4 +22,7 @@
 
     <!--Image-->
     <!--https://image.tmdb.org/t/p/w300/kqjL17yufvn9OVLyXYpvtyrFfak.jpg-->
+
+    <!--Movies Details-->
+    <!--https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US-->
 </resources>
