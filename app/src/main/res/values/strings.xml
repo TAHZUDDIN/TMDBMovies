@@ -18,11 +18,17 @@
     <!--https://android-arsenal.com/details/1/3394-->
 
 
-    <!--https://android-arsenal.com/details/1/3394-->
+
 
     <!--Image-->
     <!--https://image.tmdb.org/t/p/w300/kqjL17yufvn9OVLyXYpvtyrFfak.jpg-->
 
     <!--Movies Details-->
     <!--https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US-->
+
+    <!--Expect Animation-->
+    <!--https://android-arsenal.com/details/1/5335-->
+
+    <!--Coordinator Behaviour-->
+    <!--https://android-arsenal.com/details/1/5055-->
 </resources>
