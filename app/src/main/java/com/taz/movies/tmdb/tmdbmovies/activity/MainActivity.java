@@ -1,10 +1,14 @@
 package com.taz.movies.tmdb.tmdbmovies.activity;
 
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.RelativeLayout;
 
 import com.taz.movies.tmdb.tmdbmovies.R;
 import com.taz.movies.tmdb.tmdbmovies.adapter.MoviesAdapter;
@@ -22,6 +26,9 @@ public class MainActivity extends AppCompatActivity implements AppRequestListene
     LinearLayoutManager linearLayoutManager;
     RecyclerView recyclerViewMovies;
     MoviesAdapter moviesAdapter;
+    RelativeLayout Rl_ProgressBar;
+    CoordinatorLayout parent_coordinatorLayout;
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +38,25 @@ public class MainActivity extends AppCompatActivity implements AppRequestListene
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         recyclerViewMovies = (RecyclerView)findViewById(R.id.id_recyclerView);
+        Rl_ProgressBar = (RelativeLayout)findViewById(R.id.id_RL_progressbar);
+        parent_coordinatorLayout =(CoordinatorLayout)findViewById(R.id.id_coordinatorLayout);
+        swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.id_swipeRefreshLayout);
 
+        callAPI();
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Refresh items
+                callAPI();
+            }
+        });
+
+    }
+
+
+
+    public void callAPI(){
         String url = "https://api.themoviedb.org/3/movie/now_playing?api_key=d66d39af93971546a6280262deef40d6";
         AllUser.getInstance().moviesGET(url, this, this);
     }
@@ -39,11 +64,10 @@ public class MainActivity extends AppCompatActivity implements AppRequestListene
 
 
 
-
     @Override
     public <T> void onRequestStarted(BaseTask<T> request) {
 
-
+        VisibilityOnOff(false);
 
     }
 
@@ -55,6 +79,10 @@ public class MainActivity extends AppCompatActivity implements AppRequestListene
             movies = ((GetMovies)request).getDataObject();
             initAdapterAndCall();
 
+            // Stop refresh animation
+            swipeRefreshLayout.setRefreshing(false);
+
+            VisibilityOnOff(true);
         }
 
     }
@@ -78,6 +106,22 @@ public class MainActivity extends AppCompatActivity implements AppRequestListene
 
     @Override
     public void startActivityMethod(Movies.Movie movie) {
+
+    }
+
+
+
+    public void VisibilityOnOff(boolean CoordinatorTrueOrFalse ){
+
+            if(CoordinatorTrueOrFalse == true){
+                parent_coordinatorLayout.setVisibility(View.VISIBLE);
+                Rl_ProgressBar.setVisibility(View.GONE);
+            }
+            else {
+                parent_coordinatorLayout.setVisibility(View.GONE);
+                Rl_ProgressBar.setVisibility(View.VISIBLE);
+            }
+
 
     }
 

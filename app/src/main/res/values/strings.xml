@@ -18,13 +18,11 @@
     <!--https://android-arsenal.com/details/1/3394-->
 
 
-
-
     <!--Image-->
     <!--https://image.tmdb.org/t/p/w300/kqjL17yufvn9OVLyXYpvtyrFfak.jpg-->
 
     <!--Movies Details-->
-    <!--https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US-->
+    <!--https://api.themoviedb.org/3/movie/283995?api_key=d66d39af93971546a6280262deef40d6&language=en-US-->
 
     <!--Expect Animation-->
     <!--https://android-arsenal.com/details/1/5335-->
