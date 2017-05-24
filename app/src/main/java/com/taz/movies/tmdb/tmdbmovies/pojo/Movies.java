@@ -1,12 +1,13 @@
 package com.taz.movies.tmdb.tmdbmovies.pojo;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by tahzuddin on 24/05/17.
  */
 
-public class Movies {
+public class Movies implements Serializable {
 
     public List<Movie> results;
 
@@ -21,7 +22,7 @@ public class Movies {
 
 
 
-    public class Movie{
+    public class Movie implements Serializable{
         String poster_path;
         String overview;
         String release_date;

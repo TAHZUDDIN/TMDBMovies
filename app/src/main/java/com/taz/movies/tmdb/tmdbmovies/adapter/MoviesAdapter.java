@@ -62,6 +62,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
 
         holder.title.setText(movie.getTitle());
         holder.description.setText(movie.getOverview());
+        holder.parentLayout.setTag(movie);
 
 
     }
@@ -76,11 +77,11 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
     public void onClick(View view) {
         switch (view.getId()) {
 
-//            case R.id.id_LinLay_parent_inflatingRepo:
-//                startActivityListener.startActivityMethod(((UserRepoDetails) view.getTag()), view);
-//                break;
-//            default:
-//                break;
+            case R.id.id_LinLay_parent_inflatingMovies:
+                startActivityListener.startActivityMethod(((Movies.Movie) view.getTag()));
+                break;
+            default:
+                break;
         }
 
     }

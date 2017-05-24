@@ -27,11 +27,11 @@ public class AllUser extends BaseObject implements ConstantsRequestIDs {
     }
 
 
-//    public void getUserDetailGET(String url, AppRequestListener appRequestListener, Context context) {
-//        AppNetworkError appNetworkError = new AppNetworkError();
-//        GetUserDetails request = new GetUserDetails(Request.Method.GET, url, appNetworkError, ConstantsRequestIDs.ID_GET_USER_DETAILS, appRequestListener);
-//        sendRequest(context, appNetworkError, request, appRequestListener);
-//    }
+    public void moviesDetailsGET(String url, AppRequestListener appRequestListener, Context context) {
+        AppNetworkError appNetworkError = new AppNetworkError();
+        GetMoviesDetails request = new GetMoviesDetails(Request.Method.GET, url, appNetworkError, ConstantsRequestIDs.ID_GET_MOVIES_DETAILS, appRequestListener);
+        sendRequest(context, appNetworkError, request, appRequestListener);
+    }
 
 
 

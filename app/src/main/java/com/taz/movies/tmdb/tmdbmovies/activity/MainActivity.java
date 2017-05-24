@@ -1,5 +1,6 @@
 package com.taz.movies.tmdb.tmdbmovies.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -14,6 +15,7 @@ import com.taz.movies.tmdb.tmdbmovies.R;
 import com.taz.movies.tmdb.tmdbmovies.adapter.MoviesAdapter;
 import com.taz.movies.tmdb.tmdbmovies.pojo.Movies;
 import com.taz.movies.tmdb.tmdbmovies.pojo.StartActivityListener;
+import com.taz.movies.tmdb.tmdbmovies.util.Constants;
 import com.taz.movies.tmdb.tmdbmovies.volley.AllUser;
 import com.taz.movies.tmdb.tmdbmovies.volley.AppRequestListener;
 import com.taz.movies.tmdb.tmdbmovies.volley.BaseTask;
@@ -107,6 +109,11 @@ public class MainActivity extends AppCompatActivity implements AppRequestListene
     @Override
     public void startActivityMethod(Movies.Movie movie) {
 
+        Intent i = new Intent(this,MoviesDetailsActivity.class);
+        i.putExtra(Constants.MOVIE, movie);
+        startActivity(i);
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+
     }
 
 
@@ -121,7 +128,6 @@ public class MainActivity extends AppCompatActivity implements AppRequestListene
                 parent_coordinatorLayout.setVisibility(View.GONE);
                 Rl_ProgressBar.setVisibility(View.VISIBLE);
             }
-
 
     }
 
