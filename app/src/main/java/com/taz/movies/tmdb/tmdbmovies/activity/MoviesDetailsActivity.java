@@ -63,7 +63,7 @@ public class MoviesDetailsActivity extends AppCompatActivity  implements AppRequ
 
 
     public void callAPI(){
-        String url = "https://api.themoviedb.org/3/movie/"+movie.getId()+"?api_key=d66d39af93971546a6280262deef40d6&language=en-US";
+        String url = "https://api.themoviedb.org/3/movie/"+movie.getId()+"?api_key=d66d39af93971546a6280262deef40d6&language=en-US&append_to_response=videos";
         AllUser.getInstance().moviesDetailsGET(url, this, this);
     }
 
@@ -142,6 +142,19 @@ public class MoviesDetailsActivity extends AppCompatActivity  implements AppRequ
         Intent i = new Intent(this, ChattingActivity.class);
         startActivity(i);
         overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+    }
+
+
+
+    public void playVideo(View v){
+        if(moviesDetails.getVideos().getResults().size()>0){
+
+            Intent i = new Intent(this, YoutubeActivity.class);
+            i.putExtra(Constants.YOUTUBE_KEY,moviesDetails.getVideos().getResults().get(0).getKey());
+            startActivity(i);
+            overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
+
+        }
     }
 
 

@@ -1,6 +1,7 @@
 package com.taz.movies.tmdb.tmdbmovies.pojo;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by tahzuddin on 24/05/17.
@@ -26,6 +27,7 @@ public class MoviesDetails implements Serializable{
     String title;
     String vote_average;
     String vote_count;
+    Video videos;
 
     public String getBackdrop_path() {
         return backdrop_path;
@@ -161,5 +163,40 @@ public class MoviesDetails implements Serializable{
 
     public void setVote_count(String vote_count) {
         this.vote_count = vote_count;
+    }
+
+
+    public Video getVideos() {
+        return videos;
+    }
+
+    public void setVideos(Video videos) {
+        this.videos = videos;
+    }
+
+    public class Video implements Serializable{
+
+        public List<Resuls> results;
+
+        public class Resuls implements Serializable{
+
+            String key;
+
+            public String getKey() {
+                return key;
+            }
+
+            public void setKey(String key) {
+                this.key = key;
+            }
+        }
+
+        public List<Resuls> getResults() {
+            return results;
+        }
+
+        public void setResults(List<Resuls> results) {
+            this.results = results;
+        }
     }
 }

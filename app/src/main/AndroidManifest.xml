@@ -19,25 +19,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MoviesDetailsActivity"></activity>
-
-
+        <activity android:name=".activity.MoviesDetailsActivity" />
         <activity android:name=".activity.ChattingActivity">
-
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
                     android:host="friendlychat.firebase.google.com"
-                    android:scheme="http"
                     android:pathPrefix="/message"
-                    />
+                    android:scheme="http" />
             </intent-filter>
-
         </activity>
-
         <activity android:name=".activity.SignInActivity" />
+        <activity android:name=".activity.YoutubeActivity"></activity>
     </application>
 
 </manifest>
