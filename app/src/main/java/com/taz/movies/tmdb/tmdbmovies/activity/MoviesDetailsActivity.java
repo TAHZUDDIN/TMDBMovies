@@ -39,21 +39,17 @@ public class MoviesDetailsActivity extends AppCompatActivity  implements AppRequ
 
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         imageView=(ImageView)findViewById(R.id.image);
         title =(TextView)findViewById(R.id.title);
         releaseDate = (TextView)findViewById(R.id.release_date);
         runtime = (TextView)findViewById(R.id.runtime);
         status = (TextView)findViewById(R.id.status);
         budget = (TextView)findViewById(R.id.budget);
-
         LL_MainLayout =(LinearLayout)findViewById(R.id.id_LL_mainLayout);
         RL_Progressbar =(RelativeLayout)findViewById(R.id.id_RL_progressbarDetails);
 
-
         if (getIntent().getSerializableExtra(Constants.MOVIE) != null)
             movie = (Movies.Movie) getIntent().getSerializableExtra(Constants.MOVIE);
-
 
         if(movie != null)
             callAPI();
@@ -71,17 +67,14 @@ public class MoviesDetailsActivity extends AppCompatActivity  implements AppRequ
 
     @Override
     public <T> void onRequestStarted(BaseTask<T> request) {
-
         VisibilityOnOff(false);
-
     }
+
+
 
     @Override
     public <T> void onRequestCompleted(BaseTask<T> request) {
-
-
         if (((GetMoviesDetails)request).getDataObject() != null) {
-
             moviesDetails = ((GetMoviesDetails)request).getDataObject();
             setData();
             VisibilityOnOff(true);
@@ -90,10 +83,10 @@ public class MoviesDetailsActivity extends AppCompatActivity  implements AppRequ
                 if(moviesDetails.getVideos().getResults().size()==0){
                     setVisibilityGone();
                 }
-
         }
-
     }
+
+
 
     @Override
     public <T> void onRequestFailed(BaseTask<T> request) {
@@ -109,7 +102,6 @@ public class MoviesDetailsActivity extends AppCompatActivity  implements AppRequ
 
 
     public void VisibilityOnOff(boolean mainLayoutTrueOrFalse ){
-
         if(mainLayoutTrueOrFalse == true){
             LL_MainLayout.setVisibility(View.VISIBLE);
             RL_Progressbar.setVisibility(View.GONE);
@@ -118,7 +110,6 @@ public class MoviesDetailsActivity extends AppCompatActivity  implements AppRequ
             LL_MainLayout.setVisibility(View.GONE);
             RL_Progressbar.setVisibility(View.VISIBLE);
         }
-
     }
 
 

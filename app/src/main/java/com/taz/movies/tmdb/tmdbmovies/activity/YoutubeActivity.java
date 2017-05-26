@@ -27,40 +27,31 @@ public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlaye
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_youtube);
-
         if (getIntent().getStringExtra(Constants.YOUTUBE_KEY) != null)
             KEY = (String) getIntent().getStringExtra(Constants.YOUTUBE_KEY);
 
-
         youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
         youTubeView.initialize(Constants.YOUTUBE_API_KEY, this);
-
-
         playerStateChangeListener = new MyPlayerStateChangeListener();
         playbackEventListener = new MyPlaybackEventListener();
     }
 
+
+
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean wasRestored) {
-
-
         youTubePlayer.setPlayerStateChangeListener(playerStateChangeListener);
         youTubePlayer.setPlaybackEventListener(playbackEventListener);
         youTubePlayer.setFullscreen(true);
-
-
-
-
         if (!wasRestored) {
             youTubePlayer.cueVideo(KEY); // Plays https://www.youtube.com/watch?v=fhWaJi1Hsfo
-//            youTubePlayer.play();
         }
-
     }
+
+
 
     @Override
     public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult errorReason) {
-
         if (errorReason.isUserRecoverableError()) {
             errorReason.getErrorDialog(this, RECOVERY_REQUEST).show();
         } else {
@@ -86,6 +77,7 @@ public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlaye
     }
 
 
+
     private void showMessage(String message) {
 //        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
@@ -93,10 +85,7 @@ public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlaye
 
 
 
-
-
     private final class MyPlaybackEventListener implements YouTubePlayer.PlaybackEventListener {
-
         @Override
         public void onPlaying() {
             // Called when playback starts, either due to user action or call to play().
@@ -127,8 +116,9 @@ public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlaye
         }
     }
 
-    private final class MyPlayerStateChangeListener implements YouTubePlayer.PlayerStateChangeListener {
 
+
+    private final class MyPlayerStateChangeListener implements YouTubePlayer.PlayerStateChangeListener {
         @Override
         public void onLoading() {
             // Called when the player is loading a video

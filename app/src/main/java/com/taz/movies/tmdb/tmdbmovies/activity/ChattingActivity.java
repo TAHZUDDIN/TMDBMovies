@@ -194,9 +194,6 @@ public class ChattingActivity extends AppCompatActivity
 
 
 
-
-
-
         // New child entries
         mFirebaseDatabaseReference = FirebaseDatabase.getInstance().getReference();
         mFirebaseAdapter = new FirebaseRecyclerAdapter<FriendlyMessage,

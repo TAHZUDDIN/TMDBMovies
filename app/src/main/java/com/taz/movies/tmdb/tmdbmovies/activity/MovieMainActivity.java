@@ -36,16 +36,13 @@ public class MovieMainActivity extends AppCompatActivity implements AppRequestLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_main);
-
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         recyclerViewMovies = (RecyclerView)findViewById(R.id.id_recyclerView);
         Rl_ProgressBar = (RelativeLayout)findViewById(R.id.id_RL_progressbar);
         parent_coordinatorLayout =(CoordinatorLayout)findViewById(R.id.id_coordinatorLayout);
         swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.id_swipeRefreshLayout);
-
         callAPI();
-
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -53,7 +50,6 @@ public class MovieMainActivity extends AppCompatActivity implements AppRequestLi
                 callAPI();
             }
         });
-
     }
 
 
@@ -68,26 +64,21 @@ public class MovieMainActivity extends AppCompatActivity implements AppRequestLi
 
     @Override
     public <T> void onRequestStarted(BaseTask<T> request) {
-
         VisibilityOnOff(false);
-
     }
+
 
     @Override
     public <T> void onRequestCompleted(BaseTask<T> request) {
-
         if (((GetMovies)request).getDataObject() != null) {
-
             movies = ((GetMovies)request).getDataObject();
             initAdapterAndCall();
-
             // Stop refresh animation
             swipeRefreshLayout.setRefreshing(false);
-
             VisibilityOnOff(true);
         }
-
     }
+
 
     @Override
     public <T> void onRequestFailed(BaseTask<T> request) {
@@ -96,30 +87,26 @@ public class MovieMainActivity extends AppCompatActivity implements AppRequestLi
 
 
     public void initAdapterAndCall() {
-
         linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerViewMovies.setLayoutManager(linearLayoutManager);
         moviesAdapter = new MoviesAdapter(movies.getResults());
         moviesAdapter.setStartActivityListener(this);
         recyclerViewMovies.setAdapter(moviesAdapter);
-
     }
+
 
     @Override
     public void startActivityMethod(Movies.Movie movie) {
-
         Intent i = new Intent(this,MoviesDetailsActivity.class);
         i.putExtra(Constants.MOVIE, movie);
         startActivity(i);
         overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
-
     }
 
 
 
     public void VisibilityOnOff(boolean CoordinatorTrueOrFalse ){
-
             if(CoordinatorTrueOrFalse == true){
                 parent_coordinatorLayout.setVisibility(View.VISIBLE);
                 Rl_ProgressBar.setVisibility(View.GONE);
@@ -128,7 +115,6 @@ public class MovieMainActivity extends AppCompatActivity implements AppRequestLi
                 parent_coordinatorLayout.setVisibility(View.GONE);
                 Rl_ProgressBar.setVisibility(View.VISIBLE);
             }
-
     }
 
 

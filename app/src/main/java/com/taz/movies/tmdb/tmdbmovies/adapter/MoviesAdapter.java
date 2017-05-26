@@ -24,8 +24,6 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
 
 
     List<Movies.Movie> movies;
-
-
     public StartActivityListener startActivityListener;
 
 
@@ -39,6 +37,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
         this.movies = movies;
     }
 
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_movies_layout, parent, false); //Inflating the layout
@@ -46,26 +45,22 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
         return vhItem;
     }
 
+
+
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         Movies.Movie movie = movies.get(position);
         String ImageUrl = "https://image.tmdb.org/t/p/w300"+movie.getPoster_path();
 
-
         Picasso.with(MoviesApplicationClass.getContext())
                 .load(ImageUrl)        //this is also optional if some error has occurred in downloading the image this image would be displayed
                 .into(holder.movieImage);
 
-
-//                .placeholder(Your Drawable Resource)
-//                .error(Your Drawable Resource)
-
         holder.title.setText(movie.getTitle());
         holder.description.setText(movie.getOverview());
         holder.parentLayout.setTag(movie);
-
-
     }
+
 
     @Override
     public int getItemCount() {
@@ -76,22 +71,20 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-
             case R.id.id_LinLay_parent_inflatingMovies:
                 startActivityListener.startActivityMethod(((Movies.Movie) view.getTag()));
                 break;
             default:
                 break;
         }
-
     }
+
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         LinearLayout parentLayout;
         ImageView movieImage;
         TextView title, description;
-
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -100,7 +93,6 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
             movieImage = (ImageView) itemView.findViewById(R.id.id_image);
             title = (TextView) itemView.findViewById(R.id.id_title);
             description = (TextView) itemView.findViewById(R.id.id_description);
-
         }
     }
 

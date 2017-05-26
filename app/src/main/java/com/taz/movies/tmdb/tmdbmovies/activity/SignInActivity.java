@@ -44,14 +44,10 @@ public class SignInActivity extends AppCompatActivity implements
 
     private static final String TAG = "SignInActivity";
     private static final int RC_SIGN_IN = 9001;
-
     private SignInButton mSignInButton;
-
     private GoogleApiClient mGoogleApiClient;
-
     // Firebase instance variables
     private FirebaseAuth mFirebaseAuth;
-
     Toolbar toolbar;
 
     @Override
@@ -59,21 +55,14 @@ public class SignInActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
-
         // Initialize FirebaseAuth
         mFirebaseAuth = FirebaseAuth.getInstance();
-
         // Assign fields
         mSignInButton = (SignInButton) findViewById(R.id.sign_in_button);
-
         // Set click listeners
         mSignInButton.setOnClickListener(this);
-
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -83,9 +72,10 @@ public class SignInActivity extends AppCompatActivity implements
                 .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
-
         // Initialize FirebaseAuth
     }
+
+
 
     @Override
     public void onClick(View v) {
@@ -96,6 +86,8 @@ public class SignInActivity extends AppCompatActivity implements
         }
     }
 
+
+
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         // An unresolvable error has occurred and Google APIs (including Sign-In) will not
@@ -103,6 +95,7 @@ public class SignInActivity extends AppCompatActivity implements
         Log.d(TAG, "onConnectionFailed:" + connectionResult);
         Toast.makeText(this, "Google Play Services error.", Toast.LENGTH_SHORT).show();
     }
+
 
 
     private void signIn() {
