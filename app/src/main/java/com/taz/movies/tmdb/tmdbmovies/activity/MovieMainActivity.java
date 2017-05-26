@@ -21,7 +21,7 @@ import com.taz.movies.tmdb.tmdbmovies.volley.AppRequestListener;
 import com.taz.movies.tmdb.tmdbmovies.volley.BaseTask;
 import com.taz.movies.tmdb.tmdbmovies.volley.GetMovies;
 
-public class MainActivity extends AppCompatActivity implements AppRequestListener, StartActivityListener {
+public class MovieMainActivity extends AppCompatActivity implements AppRequestListener, StartActivityListener {
 
     Toolbar toolbar;
     Movies movies;
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements AppRequestListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_movie_main);
 
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "356937845361",
+    "firebase_url": "https://friendlychat-ab1a1.firebaseio.com",
+    "project_id": "friendlychat-ab1a1",
+    "storage_bucket": "friendlychat-ab1a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356937845361:android:b5d75907de594a2d",
+        "android_client_info": {
+          "package_name": "com.google.firebase.codelab.friendlychat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356937845361-0nc108htsd53an1bhh11jffi6vdpm78n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.google.firebase.codelab.friendlychat",
+            "certificate_hash": "f8b7d57970f21666a0d77515976c3ee6acd95a34"
+          }
+        },
+        {
+          "client_id": "356937845361-3vh2jbslmuqffhmgp0cmmfqnhloh4tri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0TCuZy95-H_SUr9Qrcpnf_HXwQJW91kI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356937845361-3vh2jbslmuqffhmgp0cmmfqnhloh4tri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356937845361:android:830e0bc1e6fdf213",
+        "android_client_info": {
+          "package_name": "com.taz.movies.tmdb.tmdbmovies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356937845361-d4g07n49b82mr7h425eaq1k2ruv20lfc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.taz.movies.tmdb.tmdbmovies",
+            "certificate_hash": "f8b7d57970f21666a0d77515976c3ee6acd95a34"
+          }
+        },
+        {
+          "client_id": "356937845361-3vh2jbslmuqffhmgp0cmmfqnhloh4tri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0TCuZy95-H_SUr9Qrcpnf_HXwQJW91kI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356937845361-3vh2jbslmuqffhmgp0cmmfqnhloh4tri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

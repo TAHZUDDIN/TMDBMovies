@@ -1,5 +1,6 @@
 package com.taz.movies.tmdb.tmdbmovies.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -134,6 +135,13 @@ public class MoviesDetailsActivity extends AppCompatActivity  implements AppRequ
         runtime.setText(moviesDetails.getRuntime());
         status.setText(moviesDetails.getStatus());
         budget.setText(moviesDetails.getBudget());
+    }
+
+
+    public void startChatting(View v){
+        Intent i = new Intent(this, ChattingActivity.class);
+        startActivity(i);
+        overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
     }
 
 
