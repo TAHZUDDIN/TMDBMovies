@@ -86,15 +86,17 @@ public class MoviesDetailsActivity extends AppCompatActivity  implements AppRequ
             setData();
             VisibilityOnOff(true);
 
+            if(moviesDetails.getVideos().getResults()!= null);
+                if(moviesDetails.getVideos().getResults().size()==0){
+                    setVisibilityGone();
+                }
+
         }
 
     }
 
     @Override
     public <T> void onRequestFailed(BaseTask<T> request) {
-
-
-
     }
 
 
@@ -155,6 +157,11 @@ public class MoviesDetailsActivity extends AppCompatActivity  implements AppRequ
             overridePendingTransition(R.anim.slide_from_right, R.anim.slide_to_left);
 
         }
+    }
+
+
+    public void setVisibilityGone(){
+        findViewById(R.id.id_play_icon).setVisibility(View.GONE);
     }
 
 
