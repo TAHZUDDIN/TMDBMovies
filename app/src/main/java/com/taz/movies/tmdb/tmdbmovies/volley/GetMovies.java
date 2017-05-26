@@ -5,7 +5,7 @@ import android.util.Log;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Response;
 import com.google.gson.Gson;
-import com.taz.movies.tmdb.tmdbmovies.pojo.Movies;
+import com.taz.movies.tmdb.tmdbmovies.model.Movies;
 
 import org.json.JSONObject;
 

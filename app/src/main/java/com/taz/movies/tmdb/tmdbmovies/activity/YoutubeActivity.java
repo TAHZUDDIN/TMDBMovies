@@ -1,7 +1,6 @@
 package com.taz.movies.tmdb.tmdbmovies.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -10,10 +9,7 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.taz.movies.tmdb.tmdbmovies.R;
-import com.taz.movies.tmdb.tmdbmovies.pojo.Movies;
 import com.taz.movies.tmdb.tmdbmovies.util.Constants;
-
-import static android.provider.Contacts.SettingsColumns.KEY;
 
 public class YoutubeActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 

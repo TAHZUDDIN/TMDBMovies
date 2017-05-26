@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.taz.movies.tmdb.tmdbmovies.activity;
+package com.taz.movies.tmdb.tmdbmovies.util;
 
 public class CodelabPreferences {
 

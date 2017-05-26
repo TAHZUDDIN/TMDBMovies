@@ -1,4 +1,4 @@
-package com.taz.movies.tmdb.tmdbmovies.pojo;
+package com.taz.movies.tmdb.tmdbmovies.model;
 
 import java.io.Serializable;
 import java.util.List;

@@ -11,8 +11,8 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.taz.movies.tmdb.tmdbmovies.R;
 import com.taz.movies.tmdb.tmdbmovies.app.MoviesApplicationClass;
-import com.taz.movies.tmdb.tmdbmovies.pojo.Movies;
-import com.taz.movies.tmdb.tmdbmovies.pojo.StartActivityListener;
+import com.taz.movies.tmdb.tmdbmovies.model.Movies;
+import com.taz.movies.tmdb.tmdbmovies.model.StartActivityListener;
 
 import java.util.ArrayList;
 import java.util.List;

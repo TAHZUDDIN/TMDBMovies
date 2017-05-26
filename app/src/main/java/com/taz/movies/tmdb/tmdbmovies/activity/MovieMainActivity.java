@@ -13,8 +13,8 @@ import android.widget.RelativeLayout;
 
 import com.taz.movies.tmdb.tmdbmovies.R;
 import com.taz.movies.tmdb.tmdbmovies.adapter.MoviesAdapter;
-import com.taz.movies.tmdb.tmdbmovies.pojo.Movies;
-import com.taz.movies.tmdb.tmdbmovies.pojo.StartActivityListener;
+import com.taz.movies.tmdb.tmdbmovies.model.Movies;
+import com.taz.movies.tmdb.tmdbmovies.model.StartActivityListener;
 import com.taz.movies.tmdb.tmdbmovies.util.Constants;
 import com.taz.movies.tmdb.tmdbmovies.volley.AllUser;
 import com.taz.movies.tmdb.tmdbmovies.volley.AppRequestListener;

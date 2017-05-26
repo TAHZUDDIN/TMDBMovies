@@ -69,7 +69,8 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 import com.taz.movies.tmdb.tmdbmovies.R;
-import com.taz.movies.tmdb.tmdbmovies.app.MoviesApplicationClass;
+import com.taz.movies.tmdb.tmdbmovies.model.FriendlyMessage;
+import com.taz.movies.tmdb.tmdbmovies.util.CodelabPreferences;
 import com.tuyenmonkey.mkloader.MKLoader;
 
 import java.util.HashMap;
