@@ -8,79 +8,94 @@
     >
 
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:layout_marginBottom="10dp">
-
-        <android.support.v7.widget.Toolbar
-            xmlns:local="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            ads:layout_scrollFlags="scroll|enterAlways"
-            local:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            local:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-
-            >
-        </android.support.v7.widget.Toolbar>
-
-    </android.support.design.widget.AppBarLayout>
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/appbar"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        ads:layout_behavior="@string/appbar_scrolling_view_behavior">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical">
 
 
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/messageRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/linearLayout"/>
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:orientation="horizontal">
+             <android.support.design.widget.CoordinatorLayout
+                 android:id="@+id/id_coordinatorLayout"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:orientation="vertical"
+                 android:layout_weight="1"
+                 >
 
-            <ImageView
-                android:id="@+id/addMessageImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                ads:srcCompat="@drawable/ic_add_black_24dp"/>
 
-            <EditText
-                android:id="@+id/messageEditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"/>
+                 <android.support.design.widget.AppBarLayout
+                     android:id="@+id/appbar"
+                     android:layout_height="wrap_content"
+                     android:layout_width="match_parent"
+                     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                     android:layout_marginBottom="10dp">
 
-            <Button
-                android:id="@+id/sendButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:enabled="false"
-                android:text="SEND"/>
+                     <android.support.v7.widget.Toolbar
+                         xmlns:local="http://schemas.android.com/apk/res-auto"
+                         android:id="@+id/toolbar"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:minHeight="?attr/actionBarSize"
+                         android:background="?attr/colorPrimary"
+                         ads:layout_scrollFlags="scroll|enterAlways"
+                         local:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                         local:popupTheme="@style/ThemeOverlay.AppCompat.Light"
 
-        </LinearLayout>
+                         >
+                     </android.support.v7.widget.Toolbar>
+
+                 </android.support.design.widget.AppBarLayout>
+
+
+
+                 <android.support.v7.widget.RecyclerView
+                     android:id="@+id/messageRecyclerView"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:layout_above="@+id/linearLayout"
+                     ads:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+             </android.support.design.widget.CoordinatorLayout>
+
+
+
+             <LinearLayout
+                 android:id="@+id/linearLayout"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentBottom="true"
+                 android:layout_alignParentLeft="true"
+                 android:layout_alignParentStart="true"
+                 android:orientation="horizontal">
+
+                 <ImageView
+                     android:id="@+id/addMessageImageView"
+                     android:layout_width="wrap_content"
+                     android:layout_height="match_parent"
+                     ads:srcCompat="@drawable/ic_add_black_24dp"/>
+
+                 <EditText
+                     android:id="@+id/messageEditText"
+                     android:layout_width="0dp"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center_vertical"
+                     android:layout_weight="1"/>
+
+                 <Button
+                     android:id="@+id/sendButton"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="bottom"
+                     android:enabled="false"
+                     android:text="SEND"/>
+
+             </LinearLayout>
+
+       </LinearLayout>
 
 
         <com.tuyenmonkey.mkloader.MKLoader
@@ -91,9 +106,6 @@
             android:layout_centerInParent="true"
             ads:mk_color="@color/colorPrimary"
             />
-
-    </RelativeLayout>
-
 
 
 

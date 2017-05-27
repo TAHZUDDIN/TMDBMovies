@@ -53,7 +53,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
         String ImageUrl = "https://image.tmdb.org/t/p/w300"+movie.getPoster_path();
 
         Glide.with(MoviesApplicationClass.getContext())
-                .load(ImageUrl)        //this is also optional if some error has occurred in downloading the image this image would be displayed
+                .load(ImageUrl)
+                .placeholder(R.drawable.movie_placeholder)//this is also optional if some error has occurred in downloading the image this image would be displayed
                 .into(holder.movieImage);
 
         holder.title.setText(movie.getTitle());
