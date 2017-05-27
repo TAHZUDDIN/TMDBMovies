@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.taz.movies.tmdb.tmdbmovies.R;
 import com.taz.movies.tmdb.tmdbmovies.adapter.MoviesAdapter;
@@ -82,7 +83,8 @@ public class MovieMainActivity extends AppCompatActivity implements AppRequestLi
 
     @Override
     public <T> void onRequestFailed(BaseTask<T> request) {
-
+        Toast.makeText(this,"Something went wrong",Toast.LENGTH_SHORT).show();
+        finish();
     }
 
 

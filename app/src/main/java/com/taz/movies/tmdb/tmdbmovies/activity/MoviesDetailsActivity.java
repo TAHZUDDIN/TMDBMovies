@@ -9,8 +9,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 import com.taz.movies.tmdb.tmdbmovies.R;
 import com.taz.movies.tmdb.tmdbmovies.app.MoviesApplicationClass;
 import com.taz.movies.tmdb.tmdbmovies.model.Movies;
@@ -90,6 +91,9 @@ public class MoviesDetailsActivity extends AppCompatActivity  implements AppRequ
 
     @Override
     public <T> void onRequestFailed(BaseTask<T> request) {
+        Toast.makeText(this,"Something went wrong",Toast.LENGTH_SHORT).show();
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_from_left, R.anim.slide_to_right);
     }
 
 
@@ -117,7 +121,7 @@ public class MoviesDetailsActivity extends AppCompatActivity  implements AppRequ
     public void setData(){
 
         String imageURl= "https://image.tmdb.org/t/p/w300"+moviesDetails.getBackdrop_path();
-        Picasso.with(MoviesApplicationClass.getContext())
+        Glide.with(MoviesApplicationClass.getContext())
                 .load(imageURl)
                 .placeholder(R.drawable.image_placeholder_details)
                 .error(R.drawable.image_placeholder_details)//this is also optional if some error has occurred in downloading the image this image would be displayed

@@ -41,7 +41,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//import com.bumptech.glide.Glide;
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.common.ConnectionResult;
@@ -67,7 +67,6 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
 import com.taz.movies.tmdb.tmdbmovies.R;
 import com.taz.movies.tmdb.tmdbmovies.model.FriendlyMessage;
 import com.taz.movies.tmdb.tmdbmovies.util.CodelabPreferences;
@@ -77,6 +76,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+
+
 
 public class ChattingActivity extends AppCompatActivity
         implements GoogleApiClient.OnConnectionFailedListener {
@@ -240,7 +241,7 @@ public class ChattingActivity extends AppCompatActivity
                                     public void onComplete(@NonNull Task<Uri> task) {
                                         if (task.isSuccessful()) {
                                             String downloadUrl = task.getResult().toString();
-                                            Picasso.with(viewHolder.messageImageView.getContext())
+                                            Glide.with(viewHolder.messageImageView.getContext())
                                                     .load(downloadUrl)
                                                     .into(viewHolder.messageImageView);
                                         } else {
@@ -250,7 +251,7 @@ public class ChattingActivity extends AppCompatActivity
                                     }
                                 });
                     } else {
-                        Picasso.with(viewHolder.messageImageView.getContext())
+                        Glide.with(viewHolder.messageImageView.getContext())
                                 .load(friendlyMessage.getImageUrl())
                                 .into(viewHolder.messageImageView);
                     }
@@ -264,14 +265,9 @@ public class ChattingActivity extends AppCompatActivity
                     viewHolder.messengerImageView.setImageDrawable(ContextCompat.getDrawable(ChattingActivity.this,
                             R.drawable.ic_account_circle_black_36dp));
                 } else {
-//                    Glide.with(ChattingActivity.this)
-//                            .load(friendlyMessage.getPhotoUrl())
-//                            .into(viewHolder.messengerImageView);
-
-                    Picasso.with(ChattingActivity.this)
+                    Glide.with(ChattingActivity.this)
                             .load(friendlyMessage.getPhotoUrl())
                             .into(viewHolder.messengerImageView);
-
 
                 }
 

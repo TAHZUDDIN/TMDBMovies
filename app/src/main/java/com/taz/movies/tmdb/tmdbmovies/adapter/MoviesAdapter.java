@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 import com.taz.movies.tmdb.tmdbmovies.R;
 import com.taz.movies.tmdb.tmdbmovies.app.MoviesApplicationClass;
 import com.taz.movies.tmdb.tmdbmovies.model.Movies;
@@ -52,7 +52,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
         Movies.Movie movie = movies.get(position);
         String ImageUrl = "https://image.tmdb.org/t/p/w300"+movie.getPoster_path();
 
-        Picasso.with(MoviesApplicationClass.getContext())
+        Glide.with(MoviesApplicationClass.getContext())
                 .load(ImageUrl)        //this is also optional if some error has occurred in downloading the image this image would be displayed
                 .into(holder.movieImage);
 
